@@ -1,1 +1,1 @@
-web: gunicorn chocolateshop.wsgi:application
+web: gunicorn chocoblanc.wsgi:application
