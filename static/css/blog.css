@@ -12,7 +12,15 @@
     /*img: float-right;*/
   /*!*background-image: url("http://www.online-image-editor.com//styles/2014/images/example_image.png")*!*/
 /*}*/
+.thumbnail{
+	background-color: rgba(117, 60, 69, 0.001);
+}
 
+.stop {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .jumbotron {
 	/*position: relative;*/
   /*padding: 30px 15px;*/
@@ -31,10 +39,11 @@
 	clear: both;
 	margin: 0 auto;
 	padding: 1em 0 4em;
-	max-width: 1000px;
+	max-width: 800px;
 	list-style: none;
 	text-align: center;
-	background-color: rgba(117, 60, 69, 0.3);
+	background-color: rgba(117, 60, 69, 0.001);
+	height: 200px;
 }
 
 
