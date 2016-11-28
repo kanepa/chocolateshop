@@ -25,6 +25,9 @@ from paypal_store import views as paypal_views
 from products import views as product_views
 from settings import MEDIA_ROOT
 from django.views.static import serve
+from cart import urls as cart_urls
+from products import urls as product_urls
+
 
 
 
@@ -35,6 +38,7 @@ urlpatterns = [
     url(r'', include(accounts_urls)),
     url(r'^paypal-return', paypal_views.paypal_return), # might need to be paypal_return/$
     url(r'^paypal-cancel', paypal_views.paypal_cancel),
-    url(r'^products/$', product_views.all_products),
+    url(r'^products/', include(product_urls)),
     url(r'^media/(?P<path>.*)$',serve,{'document_root': MEDIA_ROOT}),
+    url(r'cart/', include(cart_urls)),
 ]

@@ -22,11 +22,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+SECRET_KEY = 'z!^j6nzzutball!7p2ik^ls%p^kkx9^ruej1s)3a75c6+1m#tr'
+# SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')  this is for Heroku
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['chocolateshop.herokuapp.com']
+# ALLOWED_HOSTS = ['chocolateshop.herokuapp.com']
+ALLOWED_HOSTS = []
 
 SITE_ID = 1
 
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
     'products',
     'paypal.standard.ipn',
     'dj_database_url',
+    'cart',
 
 ]
 
@@ -89,14 +92,14 @@ WSGI_APPLICATION = 'chocoblanc.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
  }
 
-CLEARDB_DATABASE_URL = os.environ.get("CLEARDB_DATABASE_URL", "")
-
-DATABASES['default'] = dj_database_url.parse(CLEARDB_DATABASE_URL)
+# CLEARDB_DATABASE_URL = os.environ.get("CLEARDB_DATABASE_URL", "")
+#
+# DATABASES['default'] = dj_database_url.parse(CLEARDB_DATABASE_URL)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

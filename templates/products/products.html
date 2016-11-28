@@ -1,44 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="row" style="margin-top: 170px">
+    <div class="row" style="margin-top: 170px">
 
 
         <div class="thumbnail">
 
             <div class="caption">
-{#                <h4 class="pull-right">{{ product.price }}</h4>#}
+                {#                <h4 class="pull-right">{{ product.price }}</h4>#}
                 <table class="table">
-{#        <thead>#}
-{#            <tr>#}
-{#                <th>Name</th>#}
-{#                <th>Description</th>#}
-{#                <th>Price</th>#}
-{#                <th>Purchase</th>#}
-{#            </tr>#}
-{#        </thead>#}
-{#        <tbody>#}
+                    {#        <thead>#}
+                    {#            <tr>#}
+                    {#                <th>Name</th>#}
+                    {#                <th>Description</th>#}
+                    {#                <th>Price</th>#}
+                    {#                <th>Purchase</th>#}
+                    {#            </tr>#}
+                    {#        </thead>#}
+                    {#        <tbody>#}
                     {% for product in products %}
-                <tr>
+                        <tr>
 
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                <div class="caption">
-                    <p><<img height="100" width="100" src="/media/{{ product.image }}"></p>
-                    <h4 class="pull-right">${{ product.price }}</h4>
-                    <a href="#">{{ product.name }}</a>
-                    <p>{{ product.description }}</p>
-                    <a> {{ product.paypal_form.sandbox }}</a>
+                            <div class="col-md-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <p><<img height="100" width="100" src="/media/{{ product.image }}"></p>
+                                        <h4 class="pull-right">${{ product.price }}</h4>
+                                        <a href="#">{{ product.name }}</a>
+                                        <p>{{ product.description }}</p>
+                                        <a> {{ product.paypal_form.sandbox }}</a>
+                                        <a href="{% url 'add_to_cart' product.id %}">Add To Cart</a>
 
 
-                 </div>
-                </div>
-                </tr>
+                                    </div>
+                                </div>
+                        </tr>
 
-            {% endfor %}
-{#        </tbody>#}
-    </table>
-   </div>
-</div>
-</div>
+                    {% endfor %}
+                    {#        </tbody>#}
+                </table>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
