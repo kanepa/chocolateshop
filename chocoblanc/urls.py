@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.conf.urls import include, url
 from django.contrib import admin
-from home.views import get_index
+from home.views import get_index, contacts
 from accounts import urls as accounts_urls
 from django.conf.urls import url, include
 from paypal.standard.ipn import urls as paypal_urls
@@ -41,4 +41,5 @@ urlpatterns = [
     url(r'^products/', include(product_urls)),
     url(r'^media/(?P<path>.*)$',serve,{'document_root': MEDIA_ROOT}),
     url(r'cart/', include(cart_urls)),
+    url(r'^contacts/', contacts, name='contacts'),
 ]

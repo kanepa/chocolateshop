@@ -1,0 +1,90 @@
+
+{% extends "base.html" %}
+{%  load static  %}
+{% block content %}
+
+    <style>
+
+    article {
+
+        float:left;
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 1em;
+    }
+
+    aside {
+
+        float:right;
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 1em;
+    }
+    </style>
+
+
+     <div class="container-fluid">
+
+      <p>My family and I visited The Epcot center this summer.</p>
+
+        <article>
+                <h1> The Joanne</h1>
+                <p> My family and I visited </p>
+        </article>
+
+
+        <aside>
+                <h4>Epcot Center</h4>
+                <p>The Epcot Center is a theme park in Disney World, Florida.</p>
+        </aside>
+
+     <p> good morning </p>
+
+ <div class="grid">
+
+
+            <figure class="effect-julia">
+                <img src="/static/images/tablet.jpg" alt="img21"/>
+                <figcaption>
+                    <h2>Handcraft Chocolates <span></span></h2>
+                    <div>
+                        <p>Pick n mix</p>
+                        <p>Exciting New Favours</p>
+                        <p>New Christmas packaging</p>
+                    </div>
+                    <a href="/products/">View more</a>
+
+                </figcaption>
+            </figure>
+            <figure class="effect-julia">
+                <img src="/static/images/display.jpg" alt="img21"/>
+                <figcaption>
+                    <h2>Events Chocolates Displays <span></span></h2>
+                    <div>
+                        <p>5 tier display in Gleneagles</p>
+                        <p>50th party display </p>
+                        <p>Christmas table</p>
+                    </div>
+                    <a href="/products/">View more</a>
+                </figcaption>
+            </figure>
+
+            <figure class="effect-julia">
+                <img src="/static/images/blogpic.jpg">
+                <figcaption>
+                    <h2>Chocolate Recipes<span></span></h2>
+                    <div>
+                        <p>Peppermint Recipe</p>
+                        <p>Best Tablet in the World</p>
+                        <p>What dark chocolate to use</p>
+                        <a href="/blog/">Click View more</a>
+                    </div>
+                    <a href="/blog/">Click View more</a>
+                </figcaption>
+            </figure>
+        </div>
+        </div>
+    </div>
+
+
+{% endblock %}
