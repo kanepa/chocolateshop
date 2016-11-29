@@ -16,6 +16,9 @@
 	background-color: rgba(117, 60, 69, 0.001);
 }
 
+header {
+	height: 100px;
+}
 .stop {
   display: block;
   margin-left: auto;
