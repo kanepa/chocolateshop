@@ -1,6 +1,6 @@
 
 {% extends "base.html" %}
-{%  load static  %}
+{%  load static from staticfiles  %}
 {% block content %}
 
     <style>
@@ -61,33 +61,35 @@
 
 
             <figure class="effect-julia">
-                <img src="/static/images/boxofchocos.jpg" alt="img21"/>
+                <img src="{% static 'images/boxofchocos.jpg' %}" alt="img21"/>
                 <figcaption>
                     <h2>Handcraft Chocolates <span></span></h2>
                     <div>
                         <p>Pick n mix</p>
                         <p>Exciting New Favours</p>
                         <p>New Christmas packaging</p>
+                        <a href="/products/">Click View more</a>
                     </div>
                     <a href="/products/">View more</a>
 
                 </figcaption>
             </figure>
             <figure class="effect-julia">
-                <img src="/static/images/tiers2.jpg" alt="img21"/>
+                <img src="{% static 'images/tiers2.jpg' %}" alt="img21"/>
                 <figcaption>
                     <h2>Events Chocolates Displays <span></span></h2>
                     <div>
                         <p>5 tier display in Gleneagles</p>
                         <p>50th party display </p>
                         <p>Christmas table</p>
+                        <a href="/products/">Click View more</a>
                     </div>
                     <a href="/products/">View more</a>
                 </figcaption>
             </figure>
 
             <figure class="effect-julia">
-                <img src="/static/images/chocolat2.jpg">
+                <img src="{% static 'images/chocolat2.jpg' %}">
                 <figcaption>
                     <h2>Chocolate Recipes<span></span></h2>
                     <div>
