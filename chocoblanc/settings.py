@@ -23,8 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = 'z!^j6nzzutball!7p2ik^ls%p^kkx9^ruej1s)3a75c6+1m#tr'
-# SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')  this is for Heroku
+# SECRET_KEY = ''
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')  # this is for Heroku
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG')
 
