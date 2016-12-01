@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 import dj_database_url
+from boto.s3.connection import S3Connection
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,10 +26,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'z!^j6nzzutball!7p2ik^ls%p^kkx9^ruej1s)3a75c6+1m#tr'
 # SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')  this is for Heroku
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DJANGO_DEBUG')
 
-# ALLOWED_HOSTS = ['chocolateshop.herokuapp.com']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['chocolateshop.herokuapp.com']
+# ALLOWED_HOSTS = []
 
 SITE_ID = 1
 
@@ -80,6 +81,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -93,14 +95,14 @@ WSGI_APPLICATION = 'chocoblanc.wsgi.application'
 
 DATABASES = {
     'default': {
-         'ENGINE': 'django.db.backends.sqlite3',
-         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#          'ENGINE': 'django.db.backends.sqlite3',
+#          'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
  }
 
-# CLEARDB_DATABASE_URL = os.environ.get("CLEARDB_DATABASE_URL", "")
-#
-# DATABASES['default'] = dj_database_url.parse(CLEARDB_DATABASE_URL)
+CLEARDB_DATABASE_URL = os.environ.get("CLEARDB_DATABASE_URL", "") #this is heroku
+
+DATABASES['default'] = dj_database_url.parse(CLEARDB_DATABASE_URL)  #this is heroku
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -167,21 +169,30 @@ AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
     'Cache-Control': 'max-age=94608000',
 }
 
-AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID", "")
-AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY", "")
-AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME", "")
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_S3_HOST = "s3-eu-west-1.amazonaws.com"
-AWS_S3_FILE_OVERWRITE = False
+# AWS_ACCESS_KEY_ID = 'AKIAILN45X2IOF4DXA5A'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_STORAGE_BUCKET_NAME = 'chocoimage'
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % 'chocoimage'
+# AWS_S3_HOST = "s3-website-eu-west-1.amazonaws.com"
+# AWS_S3_FILE_OVERWRITE = False
+# conn = S3Connection("AKIAILN45X2IOF4DXA5A", "i0RgT90ZEn9xuojw8/8HRFqrMN46L4kGDax9lGq+")  # internet solution
+
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME','')
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID', '')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY', '')
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % ''  #this is ricards test.   the above is my stuff
+
 
 
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 STATICFILES_DIRS = (os.path.join(BASE_DIR, STATICFILES_LOCATION),)  # static directory at the project level
+STATIC_ROOT = ''
 
 
 MEDIAFILES_LOCATION = 'media'
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
+CORS_ORIGIN_ALLOW_ALL = True
