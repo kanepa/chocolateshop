@@ -100,9 +100,9 @@ DATABASES = {
     }
  }
 
-# CLEARDB_DATABASE_URL = os.environ.get("CLEARDB_DATABASE_URL", "") #this is heroku
-#
-# DATABASES['default'] = dj_database_url.parse(CLEARDB_DATABASE_URL)  #this is heroku
+CLEARDB_DATABASE_URL = os.environ.get("CLEARDB_DATABASE_URL", "") #this is heroku
+
+DATABASES['default'] = dj_database_url.parse(CLEARDB_DATABASE_URL)  #this is heroku
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
