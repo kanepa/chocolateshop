@@ -27,8 +27,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')  # this is for Heroku
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG')
-
-ALLOWED_HOSTS = ['chocolateshop.herokuapp.com']
+# DEBUG = True
+ALLOWED_HOSTS = ['chocolateshop.herokuapp.com']   #''127.0.0.1'
 # ALLOWED_HOSTS = []
 
 SITE_ID = 1
@@ -95,14 +95,14 @@ WSGI_APPLICATION = 'chocoblanc.wsgi.application'
 
 DATABASES = {
     'default': {
-#          'ENGINE': 'django.db.backends.sqlite3',
-#          'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         # 'ENGINE': 'django.db.backends.sqlite3',
+         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
  }
 
-CLEARDB_DATABASE_URL = os.environ.get("CLEARDB_DATABASE_URL", "") #this is heroku
-
-DATABASES['default'] = dj_database_url.parse(CLEARDB_DATABASE_URL)  #this is heroku
+# CLEARDB_DATABASE_URL = os.environ.get("CLEARDB_DATABASE_URL", "") #this is heroku
+#
+# DATABASES['default'] = dj_database_url.parse(CLEARDB_DATABASE_URL)  #this is heroku
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

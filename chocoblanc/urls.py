@@ -34,7 +34,7 @@ from products import urls as product_urls
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('blog.urls')),
-    url(r'^$', get_index, ),
+    url(r'^$', get_index, name='index'),
     url(r'', include(accounts_urls)),
     url(r'^paypal-return', paypal_views.paypal_return), # might need to be paypal_return/$
     url(r'^paypal-cancel', paypal_views.paypal_cancel),
