@@ -29,6 +29,9 @@
     <style>
        body{
             background-image: url("{% static 'images/front.png'%}"); }
+        .navfont {
+            font-size: 20px;
+        }
     </style>
 
     <!-- Bootstrap Core JavaScript -->
@@ -65,7 +68,7 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navfont">
                      <li><a href="/">Home</a></li>
                      <li><a href={%  url 'products' %}>Products</a> </li>
                     <li><a href={%  url 'contacts' %}>Contact</a></li>
