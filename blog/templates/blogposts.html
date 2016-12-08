@@ -31,7 +31,7 @@
                 <h3> STARTED IN 2012 by JOANNE</h3>
                 <h3> REAL LOCAL SUCCESS STORY</h3>
             </div>
-            <div class="col-md-4"><img src="/static/images/joanne.jpg">
+            <div class="col-md-4"><img src="{% static 'images/joanne.jpg' %}">
             </div>
         </div>
 
@@ -53,7 +53,7 @@
                     <div class="row">
                         <div class="col-xs-9">
                             {% if post.image %}
-                                <img src="/media/{{ post.image }}"
+                                <img src="{{ MEDIA_URL }}{{ post.image }}"
                                      style="width: 250px;height:250px;border-color:#CFE5ED; ">
                             {% endif %}
                             <p>{{ post.content | linebreaks }}</p>

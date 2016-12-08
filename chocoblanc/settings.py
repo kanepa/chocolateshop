@@ -160,7 +160,7 @@ PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
 PAYPAL_RECEIVER_EMAIL = 'paulkane17-facilitator@hotmail.com'
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # MEDIA_URL = '/media/'
 
 
@@ -191,6 +191,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, STATICFILES_LOCATION),)  # static dir
 STATIC_ROOT = ''
 
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIAFILES_LOCATION = 'media'
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
