@@ -24,9 +24,7 @@ def all_products(request):
     except EmptyPage:
 
         products = paginator.page(paginator.num_pages)
-
-    return render(request, 'products/products.html', {'products': products})
-
+    return render(request, "products/products.html", {"products": products})
 
 
 
