@@ -56,7 +56,7 @@
                                 <img src="{{ MEDIA_URL }}{{ post.image }}"
                                      style="width: 250px;height:250px;border-color:#CFE5ED; ">
                             {% endif %}
-                            <p>{{ post.content | linebreaks }}</p>
+                            <p>{{ post.content | truncatewords:30 }}</p>
                             <p>
                                 <button class="btn btn-default" onclick="location.href= {{ post.id }}">Read More
                                 </button>
