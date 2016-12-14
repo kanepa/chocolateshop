@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from products.models import Product
 
 
-# Create your views here.
 @login_required(login_url="/login?next=cart")
 def user_cart(request):
     cartItems = CartItem.objects.filter(user=request.user)
@@ -16,19 +15,20 @@ def user_cart(request):
 
     return render(request, "cart.html", {"items": cartItems, 'total': total})
 
+
 @login_required(login_url="/login?next=cart/add")
 def add_to_cart(request, id):
     product = get_object_or_404(Product, pk=id)
     cartItem = CartItem(
-        user = request.user,
-        product = product,
-        quantity =1
+        user=request.user,
+        product=product,
+        quantity=1
     )
 
     cartItem.save()
     return redirect(reverse('cart'))
 
+
 def remove_from_cart(request, id):
     CartItem.objects.get(id=id).delete()
     return redirect(reverse('cart'))
-

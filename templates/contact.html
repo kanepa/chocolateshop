@@ -1,108 +1,106 @@
 
 {% extends "base.html" %}
-{%  load static from staticfiles  %}
+{% load static from staticfiles %}
 {% block content %}
 
     <style>
 
-    #now {
+        #now {
 
-        float:right;
-        max-width: 500px;
-        margin: 0 auto;
+            float: right;
+            max-width: 500px;
+            margin: 0 auto;
 
-    }
-    #now1 {
+        }
 
-        float:left;
-        max-width: 500px;
-        margin: 0 auto;
-        padding-left: 65px;
-    }
+        #now1 {
+
+            float: left;
+            max-width: 500px;
+            margin: 0 auto;
+            padding-left: 65px;
+        }
 
 
     </style>
 
 
-     <div class="container-fluid">
+    <div class="container-fluid">
 
 
-     <header>
+        <header>
 
 
-     </header>
-
+        </header>
 
 
         <div class="container col-md-12"></div>
-         <div class="col-md-6" id="now">
-                <h3>Find us</h3>
-                <p>18 Haddow Street
-                    Hamilton, South Lanarkshire.</p>
-                <h4>Call us</h4>
-                <p>+44 7901 598964</p>
-                <p>email @chocolatblancltd</p>
-            </div>
+        <div class="col-md-6" id="now">
+            <h3>Find us</h3>
+            <p>18 Haddow Street
+                Hamilton, South Lanarkshire.</p>
+            <h4>Call us</h4>
+            <p>+44 7901 598964</p>
+            <p>email @chocolatblancltd</p>
+        </div>
+
+
+        <div class="col-md-6" id="now1">
+            <h3>Chocolat Blanc</h3>
+            <p>Opening Hours </p>
+            <p>10:00 to 14:00</p>
+
+        </div>
+    </div>
 
 
 
-
-            <div class="col-md-6" id="now1">
-                <h3>Chocolat Blanc</h3>
-                <p>Opening Hours </p>
-                <p>10:00 to 14:00</p>
-
-            </div>
-            </div>
+    <div class="grid">
 
 
+        <figure class="effect-julia">
+            <img src="{% static 'images/boxofchocos.jpg' %}" alt="img21"/>
+            <figcaption>
+                <h2>Handcraft Chocolates <span></span></h2>
+                <div>
+                    <p>Pick n mix</p>
+                    <p>Exciting New Favours</p>
+                    <p>New Christmas packaging</p>
+                    <a href="/products/">Click View more</a>
+                </div>
+                <a href="/products/">View more</a>
 
- <div class="grid">
+            </figcaption>
+        </figure>
+        <figure class="effect-julia">
+            <img src="{% static 'images/tiers2.jpg' %}" alt="img21"/>
+            <figcaption>
+                <h2>Events Chocolates Displays <span></span></h2>
+                <div>
+                    <p>5 tier display in Gleneagles</p>
+                    <p>50th party display </p>
+                    <p>Christmas table</p>
+                    <a href="/products/">Click View more</a>
+                </div>
+                <a href="/products/">View more</a>
+            </figcaption>
+        </figure>
 
-
-            <figure class="effect-julia">
-                <img src="{% static 'images/boxofchocos.jpg' %}" alt="img21"/>
-                <figcaption>
-                    <h2>Handcraft Chocolates <span></span></h2>
-                    <div>
-                        <p>Pick n mix</p>
-                        <p>Exciting New Favours</p>
-                        <p>New Christmas packaging</p>
-                        <a href="/products/">Click View more</a>
-                    </div>
-                    <a href="/products/">View more</a>
-
-                </figcaption>
-            </figure>
-            <figure class="effect-julia">
-                <img src="{% static 'images/tiers2.jpg' %}" alt="img21"/>
-                <figcaption>
-                    <h2>Events Chocolates Displays <span></span></h2>
-                    <div>
-                        <p>5 tier display in Gleneagles</p>
-                        <p>50th party display </p>
-                        <p>Christmas table</p>
-                        <a href="/products/">Click View more</a>
-                    </div>
-                    <a href="/products/">View more</a>
-                </figcaption>
-            </figure>
-
-            <figure class="effect-julia">
-                <img src="{% static 'images/chocolat2.jpg' %}">
-                <figcaption>
-                    <h2>Chocolate Recipes<span></span></h2>
-                    <div>
-                        <p>Peppermint Recipe</p>
-                        <p>Best Tablet in the World</p>
-                        <p>What dark chocolate to use</p>
-                        <a href="/blog/">Click View more</a>
-                    </div>
+        <figure class="effect-julia">
+            <img src="{% static 'images/chocolat2.jpg' %}">
+            <figcaption>
+                <h2>Chocolate Recipes<span></span></h2>
+                <div>
+                    <p>Peppermint Recipe</p>
+                    <p>Best Tablet in the World</p>
+                    <p>What dark chocolate to use</p>
                     <a href="/blog/">Click View more</a>
-                </figcaption>
-            </figure>
-        </div>
-        </div>
+                </div>
+                <a href="/blog/">Click View more</a>
+            </figcaption>
+        </figure>
+    </div>
+    </div>
     </div>
 
 

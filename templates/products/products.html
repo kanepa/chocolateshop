@@ -15,13 +15,13 @@
                             <div class="col-md-4">
                                 <div class="thumbnail">
                                     <div class="caption">
-                                        <p><img class="stop" height="150" width="150"  src="{{MEDIA_URL }}{{ product.image }}"></p>
+                                        <p><img class="stop" height="150" width="150"
+                                                src="{{ MEDIA_URL }}{{ product.image }}"></p>
                                         <h4 class="pull-right">${{ product.price }}</h4>
                                         <a href="#">{{ product.name }}</a>
                                         <p>{{ product.description }}</p>
                                         <a> {{ product.paypal_form.sandbox }}</a>
-                                        <a  href="{% url 'add_to_cart' product.id %}">Add To Cart</a>
-
+                                        <a href="{% url 'add_to_cart' product.id %}">Add To Cart</a>
 
 
                                     </div>
@@ -31,7 +31,7 @@
                     {% endfor %}
                     {#        </tbody>#}
                 </table>
-             {% if products.has_other_pages %}
+                {% if products.has_other_pages %}
                     <ul class="pagination">
                         {% if products.has_previous %}
                             <li><a href="?page={{ products.previous_page_number }}">&laquo;</a></li>

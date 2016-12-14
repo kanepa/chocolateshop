@@ -22,4 +22,5 @@
 #### Pagination provide a challenge as I had to understand were to put the function in 
 #### in the views. Also how to wire up the pagination to the HTML page.
 
+#### Making sure that website was on the connect through GitHub and into Heruko.
 #### 

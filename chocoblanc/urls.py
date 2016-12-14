@@ -36,7 +36,7 @@ urlpatterns = [
     url(r'', include('blog.urls')),
     url(r'^$', get_index, name='index'),
     url(r'', include(accounts_urls)),
-    url(r'^paypal-return', paypal_views.paypal_return), # might need to be paypal_return/$
+    url(r'^paypal-return', paypal_views.paypal_return),
     url(r'^paypal-cancel', paypal_views.paypal_cancel),
     url(r'^products/', include(product_urls)),
     url(r'^media/(?P<path>.*)$',serve,{'document_root': MEDIA_ROOT}),

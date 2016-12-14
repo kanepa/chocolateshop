@@ -14,26 +14,19 @@ import os
 import dj_database_url
 from boto.s3.connection import S3Connection
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+''
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-
-# SECRET_KEY = ''
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')  # this is for Heroku
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG')
-# DEBUG = True
-ALLOWED_HOSTS = ['chocolateshop.herokuapp.com']   #''127.0.0.1'
-# ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['chocolateshop.herokuapp.com']
+
 
 SITE_ID = 1
 
-# Application definition
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -90,22 +83,19 @@ TEMPLATES = [
 WSGI_APPLICATION = 'chocoblanc.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.10/ref/settings/#databases
+
 
 DATABASES = {
     'default': {
-         # 'ENGINE': 'django.db.backends.sqlite3',
-         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
     }
  }
 
-CLEARDB_DATABASE_URL = os.environ.get("CLEARDB_DATABASE_URL", "") #this is heroku
+CLEARDB_DATABASE_URL = os.environ.get("CLEARDB_DATABASE_URL", "")
 
-DATABASES['default'] = dj_database_url.parse(CLEARDB_DATABASE_URL)  #this is heroku
+DATABASES['default'] = dj_database_url.parse(CLEARDB_DATABASE_URL)
 
-# Password validation
-# https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -137,14 +127,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-# STATIC_URL = '/static/'
-#
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, "static"),
-# )
 
 DISQUS_WEBSITE_SHORTNAME = 'yourshortname'
 
@@ -161,21 +144,15 @@ PAYPAL_RECEIVER_EMAIL = 'paulkane17-facilitator@hotmail.com'
 
 
 
-# MEDIA_URL = '/media/'
 
 
-AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
+
+AWS_HEADERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
     'Cache-Control': 'max-age=94608000',
 }
 
-# AWS_ACCESS_KEY_ID = 'AKIAILN45X2IOF4DXA5A'
-# AWS_SECRET_ACCESS_KEY = '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'
-# AWS_STORAGE_BUCKET_NAME = 'chocoimage'
-# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % 'chocoimage'
-# AWS_S3_HOST = "s3-website-eu-west-1.amazonaws.com"
-# AWS_S3_FILE_OVERWRITE = False
-# conn = S3Connection("AKIAILN45X2IOF4DXA5A", "i0RgT90ZEn9xuojw8/8HRFqrMN46L4kGDax9lGq+")  # internet solution
+
 
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME','')
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID', '')
@@ -187,7 +164,7 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
-STATICFILES_DIRS = (os.path.join(BASE_DIR, STATICFILES_LOCATION),)  # static directory at the project level
+STATICFILES_DIRS = (os.path.join(BASE_DIR, STATICFILES_LOCATION),)
 STATIC_ROOT = ''
 
 
