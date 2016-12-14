@@ -12,7 +12,7 @@
                     {% for product in products %}
                         <tr>
 
-                            <div class="col-md-4">
+                            <div class="col-md-4"> <!-- This adds products and the paypal logo -->
                                 <div class="thumbnail">
                                     <div class="caption">
                                         <p><img class="stop" height="150" width="150"
@@ -30,7 +30,7 @@
 
                     {% endfor %}
                     {#        </tbody>#}
-                </table>
+                </table> <!-- places the pagination on the bottom of the page -->
                 {% if products.has_other_pages %}
                     <ul class="pagination">
                         {% if products.has_previous %}

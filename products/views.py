@@ -6,7 +6,7 @@ from django.shortcuts import render
 from .models import Product
 
 
-def all_products(request):
+def all_products(request): # pagination requesting 6 products only on a page
     products = Product.objects.all()
 
     page = request.GET.get('page', 1)
