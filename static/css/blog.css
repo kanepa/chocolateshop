@@ -1,17 +1,5 @@
 
-/*.jumbotron {*/
-  /*padding: 30px 15px;*/
-    /*width: auto;*/
 
-  /*margin-top: 250px;*/
-  /*color: inherit;*/
-  /*background-color: rgb(117,60,69);*/
-    /*background-color: rgba(117, 60, 69, 0.3);*/
-  /*text-align: left;*/
-  /*background-size: cover;*/
-    /*img: float-right;*/
-  /*!*background-image: url("http://www.online-image-editor.com//styles/2014/images/example_image.png")*!*/
-/*}*/
 .thumbnail{
 	background-color: rgba(117, 60, 69, 0.001);
 }
@@ -25,19 +13,6 @@ header {
   margin-right: auto;
 }
 .jumbotron {
-	/*position: relative;*/
-  /*padding: 30px 15px;*/
-	/*width: 1000px;*/
-	/*margin: 0 auto;*/
-	/*margin-top: 75px;*/
-  /*color: inherit;*/
-  /*background-color: rgb(117,60,69);*/
-    /*background-color: rgba(117, 60, 69, 0.3);*/
-  /*text-align: left;*/
-  /*background-size:*/
-    /*img float-right;*/
-  /*background-image: url("http://www.online-image-editor.com//styles/2014/images/example_image.png")*/
-
 	position: relative;
 	clear: both;
 	margin: 0 auto;
