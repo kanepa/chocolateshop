@@ -1,4 +1,11 @@
 
+.grow {
+	transition: all .2s ease-in-out;
+}
+.grow:hover {
+	transform: scale(1.1);
+}
+
 
 .thumbnail{
 	background-color: rgba(117, 60, 69, 0.001);
