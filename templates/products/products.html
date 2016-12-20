@@ -8,6 +8,9 @@
     .grow:hover {
         transform: scale(2.1);
     }
+    .bordering{
+    padding:3px; border:1px solid #021a40;
+    }
     </style>
     <div class="row" style="margin-top: 170px">
 
@@ -24,7 +27,7 @@
                             <div class="col-md-4"> <!-- This adds products and the paypal logo -->
                                 <div class="thumbnail">
                                     <div class="caption">
-                                        <p><img class="stop grow" height="150" width="150"
+                                        <p><img class="stop grow bordering" height="150" width="150"
                                                 src="{{ MEDIA_URL }}{{ product.image }}"></p>
                                         <h4 class="pull-right">${{ product.price }}</h4>
                                         <a href="#">{{ product.name }}</a>
