@@ -77,8 +77,7 @@
                     <li><a href={% url 'products' %}>Products</a></li>
                     <li><a href={% url 'contacts' %}>Contact</a></li>
                     <li><a href="/blog/">Blog</a></li>
-                    <li><a href="https://www.facebook.com/chocolatblancltd/?ref=page_internal"><span
-                            class="fa fa-facebook" aria-hidden="true"></span></a></li>
+
 
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'cart' %}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
