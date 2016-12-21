@@ -25,6 +25,7 @@
     <link href="{% static 'css/blog.css' %}" rel="stylesheet">
     <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
 
     <style>
        body{
@@ -75,6 +76,7 @@
                      <li><a href={%  url 'products' %}>Products</a> </li>
                     <li><a href={%  url 'contacts' %}>Contact</a></li>
                     <li><a href="/blog/">Blog</a></li>
+                    <li><a href="https://www.facebook.com/chocolatblancltd/?ref=page_internal"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
 
                     {% if user.is_authenticated %}
                          <li><a href="{% url 'cart' %}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
