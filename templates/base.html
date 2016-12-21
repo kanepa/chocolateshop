@@ -70,26 +70,29 @@
                     </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><!-- Nav bar changes if you are logged on -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!-- Nav bar changes if you are logged on -->
                 <ul class="nav navbar-nav navfont">
-                     <li><a href="/">Home</a></li>
-                     <li><a href={%  url 'products' %}>Products</a> </li>
-                    <li><a href={%  url 'contacts' %}>Contact</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href={% url 'products' %}>Products</a></li>
+                    <li><a href={% url 'contacts' %}>Contact</a></li>
                     <li><a href="/blog/">Blog</a></li>
-                    <li><a href="https://www.facebook.com/chocolatblancltd/?ref=page_internal"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
+                    <li><a href="https://www.facebook.com/chocolatblancltd/?ref=page_internal"><span
+                            class="fa fa-facebook" aria-hidden="true"></span></a></li>
 
                     {% if user.is_authenticated %}
-                         <li><a href="{% url 'cart' %}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                    <li><a href="{% url 'profile' %}">Profile</a></li>
-                     <li><a href="{% url 'logout' %}">Log Out</a></li>
+                        <li><a href="{% url 'cart' %}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                        <li><a href="{% url 'profile' %}">Profile</a></li>
+                        <li><a href="{% url 'logout' %}">Log Out</a></li>
+                        <li><a href="https://www.facebook.com/chocolatblancltd/?ref=page_internal"><span
+                                class="fa fa-facebook" aria-hidden="true"></span></a></li>
+                    {% else %}
+                        <li><a href="{% url 'register' %}">Register</a></li>
+                        <li><a href="{% url 'login' %}">Log In</a></li>
+                        <li><a href="https://www.facebook.com/chocolatblancltd/?ref=page_internal"><span
+                                class="fa fa-facebook" aria-hidden="true"></span></a></li>
 
-            {% else %}
-                    <li><a href="{% url 'register' %}">Register</a></li>
-                    <li><a href="{% url 'login' %}">Log In</a></li>
-
-            {% endif %}
-
-
+                    {% endif %}
 
 
                 </ul>
