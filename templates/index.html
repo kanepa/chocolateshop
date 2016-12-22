@@ -1,24 +1,26 @@
 {% extends "base.html" %}
-{%  load static from staticfiles %}
+{% load static from staticfiles %}
 {% block content %}
 
-<style>
-.order{
-    padding-top: 125px;
-    margin-left: 65px;
-    margin-right: 65px;
+    <style>
+        .order {
+            padding-top: 125px;
+            margin-left: 65px;
+            margin-right: 65px;
 
-}
-.bordering{
-    padding:3px; border:1px solid #021a40;
-}
+        }
+
+        .bordering {
+            padding: 3px;
+            border: 1px solid #021a40;
+        }
 
 
-</style>
+    </style>
 
     <div class="content container">
 
-        <div class="row order">
+        <div class="row order"> <!-- image plus text top section -->
             <div class="col-md-8 ">
                 <h1>THE BEST THINGS IN LIFE ARE SWEET</h1>
                 <h3>UNIQUE SCOTTISH HOMEMADE CHOCOLATE MAKER</h3>
@@ -30,8 +32,7 @@
         </div>
 
 
-
-        <div class="grid">
+        <div class="grid"> <!-- Css Image effect -->
             <figure class="effect-julia">
                 <img class="bordering" src="{% static 'images/tablet.jpg' %}" alt="img21"/>
                 <figcaption>
@@ -66,7 +67,7 @@
                         <p>Dark Chocolate Recipe</p>
                         <p>Prefect Chocolate Brownie</p>
                         <p>Easter Eggs</p>
-{#                        <a href="/blog/">Click View more</a>#}
+
                     </div>
                     <a href="/blog/">Click View more</a>
                 </figcaption>

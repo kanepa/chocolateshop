@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2>Success!</h2>
+
+    <style>
+    .buffer {
+        padding: 100px;
+    }
+    </style>
+
+    <h2 class = "buffer">Success!</h2>
     <p>You are logged in as {{ user.email }} </p>
 {% endblock %}
