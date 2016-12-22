@@ -24,7 +24,7 @@
 
     <div class="content container">
 
-        <div class="row order">
+        <div class="row order"><!-- Front section image with text -->
             <div class="col-md-8 ">
                 <h1>THE BEST THINGS IN LIFE ARE SWEET</h1>
                 <h3>UNIQUE SCOTTISH HOMEMADE CHOCOLATE MAKER</h3>
@@ -36,7 +36,7 @@
         </div>
 
 
-        {% for post in posts %}
+        {% for post in posts %} <!-- Issuing the Blog content -->
             <div class="row">
                 <hr>
                 <div class="col-md-2 col-sm-3 text-center">
@@ -47,7 +47,7 @@
 
                     </a>
                 </div>
-                <div class="col-md-10 col-sm-9"><!-- This adds the truncatewords of 30 characters -->
+                <div class="col-md-10 col-sm-9"><!-- Blog with image 30 max characters -->
 
                     <h3> {{ post.title }}</h3>
                     <div class="row">
@@ -56,7 +56,7 @@
                                 <img src="{{ MEDIA_URL }}{{ post.image }}"
                                      style="width: 250px;height:250px;border-color:#CFE5ED; ">
                             {% endif %}
-                            <p>{{ post.content | truncatewords:30 }}</p>
+                            <p>{{ post.content | truncatewords:30 }}</p><!-- This adds the truncatewords of 30 characters -->
                             <p>
                                 <button class="btn btn-default" onclick="location.href= {{ post.id }}">Read More
                                 </button>
@@ -64,7 +64,7 @@
                             <p>{{ post.published_date }} | <strong>Views</strong> {{ post.views }}
                                 |<strong> Tag </strong>{{ post.tag }}</p>
 
-                            {% load disqus_tags %}
+                            {% load disqus_tags %}  <!-- Brings in the comments section -->
                             {% set_disqus_title post.tile %}
                             {% disqus_show_comments %}
 

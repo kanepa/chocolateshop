@@ -9,7 +9,7 @@
     </style>
 
 
-    <form class = buffer role="form" method="post" action="{% url 'login' %}">
+    <form class = buffer role="form" method="post" action="{% url 'login' %}"><!-- Start the login request -->
         <legend>Login</legend>
         {% csrf_token %}
         {{ form| as_bootstrap }}

@@ -8,7 +8,7 @@
     }
     </style>
 
-    <form class = buffer role="form" method="post" action="{% url 'register' %}">
+    <form class = buffer role="form" method="post" action="{% url 'register' %}"><!-- requesting create account -->
         <legend>Create a new account</legend>
         {% csrf_token %}
         {{ form| as_bootstrap }}
